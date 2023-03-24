@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bottle Measurement Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col">
+                    <h1>Bottle Measurement Page</h1>
+                </div>
+            </div>
+            <form>
+                <div class="row mt-1">
+                    <div class="col">
+                        <label for="weight-input">Current Bottle Weight, without cap:</label>
+                        <input id="weight-input" type="text" inputmode="numeric" placeholder="123.45" min="0" />
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col">
+                        <label for="bottle-type-selector">Which bottle?</label>
+                        <select id="bottle-type-selector">
+                            <option value="pigeon-large">Pigeon (Large)</option>
+                            <option value="pigeon-small">Pigeon (Small)</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+            <div class="row mt-3">
+                <div class="col">
+                    <h2>Result: <span id="result">0</span>ml</h2>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+        <script src="measure.js"></script>
+    </body>
+</html>
