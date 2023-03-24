@@ -4,7 +4,9 @@ if ("serviceWorker" in navigator) {
 
 const weightInput = document.getElementById("weight-input");
 const bottleTypeSelector = document.getElementById("bottle-type-selector");
-const resultField = document.getElementById("result");
+const startingVolumeInput = document.getElementById("starting-volume");
+const remainingField = document.getElementById("remaining");
+const consumedField = document.getElementById("consumed");
 
 const bottleWeights = {
     'pigeon-small': 33.3,
@@ -14,6 +16,9 @@ const hundredMlFormulaWeight = 103
 
 weightInput.addEventListener("input", updateResult);
 bottleTypeSelector.addEventListener("input", updateResult);
+startingVolumeInput.addEventListener("input", updateResult);
+
+updateResult();
 
 function updateResult() {
     const baseBottleWeight = bottleWeights[bottleTypeSelector.value]
@@ -21,5 +26,11 @@ function updateResult() {
 
     const mlRemaining = Math.ceil((totalBottleWeight - baseBottleWeight) / (hundredMlFormulaWeight / 100))
 
-    resultField.innerHTML = isNaN(mlRemaining) ? 0 : Math.max(mlRemaining, 0);
+    if (isNaN(mlRemaining) || mlRemaining < 0) {
+        remainingField.innerHTML = startingVolumeInput.value
+        consumedField.innerHTML = 0
+    } else {
+        remainingField.innerHTML = mlRemaining
+        consumedField.innerHTML = startingVolumeInput.value - mlRemaining
+    }
 }
