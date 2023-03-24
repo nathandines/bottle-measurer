@@ -1,10 +1,10 @@
-const cacheName = "v5";
+const cacheName = "v7";
 const contentToCache = [
-    "index.html",
+    "./",
     "app.js",
     "app.webmanifest",
-    "assets/bootstrap@5.3.0-alpha2/bootstrap.bundle.min.js",
-    "assets/bootstrap@5.3.0-alpha2/bootstrap.min.css"
+    "assets/bootstrap/5.3.0-alpha2/bootstrap.bundle.min.js",
+    "assets/bootstrap/5.3.0-alpha2/bootstrap.min.css"
 ];
 
 self.addEventListener("install", (e) => {
@@ -18,18 +18,14 @@ self.addEventListener("install", (e) => {
     );
 });
 
-self.addEventListener("fetch", (e) => {
-    e.respondWith(
-        (async () => {
-            const r = await caches.match(e.request);
-            console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
-            if (r) return r;
-            const response = await fetch(e.request);
-            const cache = await caches.open(cacheName);
-            console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
-            cache.put(e.request, response.clone());
-            return response;
-        })()
+// When there's an incoming fetch request, try and respond with a precached resource, otherwise fall back to the network
+self.addEventListener('fetch', (event) => {
+    console.log('Fetch intercepted for:', event.request.url);
+    event.respondWith(
+        caches.match(event.request).then((cachedResponse) => {
+            if (cachedResponse) return cachedResponse;
+            return fetch(event.request);
+        }),
     );
 });
 
