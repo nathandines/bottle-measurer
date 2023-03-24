@@ -2,6 +2,7 @@ const cacheName = "v1";
 const contentToCache = [
     "/index.html",
     "/app.js",
+    "/app.webmanifest",
     "/assets/bootstrap@5.3.0-alpha2/bootstrap.bundle.min.js",
     "/assets/bootstrap@5.3.0-alpha2/bootstrap.min.css"
 ];
