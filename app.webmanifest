@@ -1,6 +1,6 @@
 {
     "name": "Bottle Measurer",
-    "start_url": "/",
+    "start_url": "https://nathandines.github.io/bottle-measurer/",
     "display": "standalone",
     "id": "nathandines.github.io/bottle-measurer",
     "orientation": "portrait"
