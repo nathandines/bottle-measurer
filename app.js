@@ -1,3 +1,7 @@
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js");
+}
+
 const weightInput = document.getElementById("weight-input");
 const bottleTypeSelector = document.getElementById("bottle-type-selector");
 const resultField = document.getElementById("result");
