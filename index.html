@@ -10,37 +10,35 @@
     <body>
         <div class="container py-5">
             <div class="row">
-                <div class="col">
+                <div class="col d-flex justify-content-center">
                     <h1>Bottle Measurer</h1>
                 </div>
             </div>
             <form>
-                <div class="row mt-1">
-                    <div class="col">
-                        <label for="weight-input">Current Bottle Weight, without cap (g):</label>
-                        <input id="weight-input" type="text" inputmode="decimal" placeholder="123.45" min="0" />
-                    </div>
+                <div class="mb-3">
+                    <label for="weight-input" class="form-label">Current Bottle Weight, without cap (g):</label>
+                    <input id="weight-input" class="form-control" type="text" inputmode="decimal" placeholder="123.45" min="0" />
                 </div>
-                <div class="row mt-1">
-                    <div class="col">
-                        <label for="bottle-type-selector">Which bottle?</label>
-                        <select id="bottle-type-selector">
-                            <option value="pigeon-large">Pigeon (Large)</option>
-                            <option value="pigeon-small">Pigeon (Small)</option>
-                        </select>
-                    </div>
+                <div class="mb-3">
+                    <label for="bottle-type-selector" class="form-label">Which bottle?</label>
+                    <select class="form-select" id="bottle-type-selector">
+                        <option value="pigeon-large">Pigeon (Large)</option>
+                        <option value="pigeon-small">Pigeon (Small)</option>
+                    </select>
                 </div>
-                <div class="row mt-1">
-                    <div class="col">
-                        <label for="starting-volume">Starting volume (ml):</label>
-                        <input id="starting-volume" type="text" inputmode="numeric" value="170" min="0" />
-                    </div>
+                <div class="mb-3">
+                    <label for="starting-volume" class="form-label">Starting volume (ml):</label>
+                    <input id="starting-volume" class="form-control" type="text" inputmode="numeric" value="170" min="0" />
                 </div>
             </form>
-            <div class="row mt-3">
-                <div class="col">
-                    <h2><span id="consumed">–</span>ml consumed</h2>
-                    <small class="text-muted">(<span id="remaining">∞</span>ml remaining)</small>
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <span class="display-2"><span id="consumed">–</span>ml consumed</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <small class="text-muted">(<span id="remaining">–</span>ml remaining)</small>
                 </div>
             </div>
         </div>

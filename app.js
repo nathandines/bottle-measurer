@@ -27,7 +27,7 @@ function updateResult() {
 
     if ([totalBottleWeight, startingVolume].indexOf("") !== -1 || isNaN(mlRemaining)) {
         consumedField.innerHTML = "–"
-        remainingField.innerHTML = "∞"
+        remainingField.innerHTML = "–"
     } else {
         consumedField.innerHTML = Math.min(Math.max(startingVolume - mlRemaining, 0), startingVolume)
         remainingField.innerHTML = Math.max(mlRemaining, 0)
