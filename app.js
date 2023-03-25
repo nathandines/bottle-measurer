@@ -26,10 +26,10 @@ function updateResult() {
     const mlRemaining = Math.ceil((totalBottleWeight - baseBottleWeight) / (hundredMlFormulaWeight / 100))
 
     if ([totalBottleWeight, startingVolume].indexOf("") !== -1 || isNaN(mlRemaining)) {
-        consumedField.innerHTML = 0
-        remainingField.innerHTML = startingVolume
+        consumedField.innerHTML = "–"
+        remainingField.innerHTML = "∞"
     } else {
         consumedField.innerHTML = Math.min(Math.max(startingVolume - mlRemaining, 0), startingVolume)
-        remainingField.innerHTML = Math.max(Math.min(mlRemaining, startingVolume), 0)
+        remainingField.innerHTML = Math.max(mlRemaining, 0)
     }
 }
