@@ -17,7 +17,7 @@
             <form>
                 <div class="mb-3">
                     <label for="weight-input" class="form-label">Current Bottle Weight, without cap (g):</label>
-                    <input id="weight-input" class="form-control" type="text" inputmode="decimal" placeholder="123.45" min="0" />
+                    <input id="weight-input" class="form-control" type="text" inputmode="decimal" placeholder="123.45" onclick="this.setSelectionRange(0, this.value.length)" />
                 </div>
                 <div class="mb-3">
                     <label for="bottle-type-selector" class="form-label">Which bottle?</label>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="starting-volume" class="form-label">Starting volume (ml):</label>
-                    <input id="starting-volume" class="form-control" type="text" inputmode="numeric" value="170" min="0" />
+                    <input id="starting-volume" class="form-control" type="text" inputmode="numeric" value="170" onclick="this.setSelectionRange(0, this.value.length)" />
                 </div>
             </form>
             <div class="row">
