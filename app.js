@@ -29,7 +29,7 @@ function updateResult() {
         consumedField.innerHTML = "–"
         remainingField.innerHTML = "–"
     } else {
-        consumedField.innerHTML = Math.min(Math.max(startingVolume - mlRemaining, 0), startingVolume)
-        remainingField.innerHTML = Math.max(mlRemaining, 0)
+        consumedField.innerHTML = Math.min(Math.max(startingVolume - mlRemaining, 0), startingVolume).toLocaleString()
+        remainingField.innerHTML = Math.max(mlRemaining, 0).toLocaleString()
     }
 }
