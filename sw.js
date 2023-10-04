@@ -1,4 +1,4 @@
-const cacheName = "v13";
+const cacheName = "20231004-01";
 const contentToCache = [
     "./",
     "app.js",
